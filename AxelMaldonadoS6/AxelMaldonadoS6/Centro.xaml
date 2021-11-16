@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AxelMaldonadoS6.Centro" Title="Centro de Vacunación">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame  BackgroundColor="LightSeaGreen" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <BoxView WidthRequest="1" BackgroundColor="White" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" />
+                    <BoxView WidthRequest="1" BackgroundColor="White" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" />
+                    <BoxView WidthRequest="1" BackgroundColor="White" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="2" />
+                    <BoxView WidthRequest="1" BackgroundColor="White" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="3" />
+
+                    <Label Text="Nombre" HorizontalTextAlignment="Center" FontSize="Subtitle" Grid.Row="0" Grid.Column="0" />
+                    <Label Text="Sector" HorizontalTextAlignment="Center" FontSize="Subtitle" Grid.Row="0" Grid.Column="1" />
+                    <Label Text="Ubicación" HorizontalTextAlignment="Center" FontSize="Subtitle" Grid.Row="0" Grid.Column="2" />
+                    <Label Text="Teléfono" HorizontalTextAlignment="Center" FontSize="Subtitle" Grid.Row="0" Grid.Column="3" />
+                    <Label Text="Estado" HorizontalTextAlignment="Center" FontSize="Subtitle" Grid.Row="0" Grid.Column="4" />
+
+                </Grid>
+            </Frame>
+
+            <ListView x:Name="listView" SeparatorColor="LightSeaGreen" SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem IconImageSource="edit.png" CommandParameter="{Binding .}" Clicked="MenuItem_Actualizar" />
+                                <MenuItem  IconImageSource="delete.png" CommandParameter="{Binding .}" Clicked="MenuItem_Eliminar"  />
+                            </ViewCell.ContextActions>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label x:Name="lblId" Text="{Binding idCentro}" Grid.Column="0" HorizontalTextAlignment="Center" IsVisible="false" />
+                                    <Label x:Name="lblNombre" Text="{Binding nombreCentro}" Grid.Column="0" HorizontalTextAlignment="Center" />
+                                    <Label x:Name="lblSector" Text="{Binding sectorCentro}" Grid.Column="1" HorizontalTextAlignment="Center" />
+                                    <Label x:Name="lblDireccion" Text="{Binding direccionCentro}" Grid.Column="2" HorizontalTextAlignment="Center" />
+                                    <Label x:Name="lblTelefono" Text="{Binding telefonoCentro}" Grid.Column="3" HorizontalTextAlignment="Center" />
+                                    <Label x:Name="lblEstado" Text="{Binding estadoCentro}" Grid.Column="4" HorizontalTextAlignment="Center" />
+
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Button x:Name="btnInsertar" Text="Insertar" Clicked="btnInsertar_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

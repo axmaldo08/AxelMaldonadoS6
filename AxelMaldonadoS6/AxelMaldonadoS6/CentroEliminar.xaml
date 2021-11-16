@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AxelMaldonadoS6.CentroEliminar">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Eliminar Centro" FontSize="20" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+            <Image Source="centro.png" HorizontalOptions="Center" WidthRequest="80" HeightRequest="80" />
+
+            <Label />
+            <Label x:Name="lblId" Text="" IsVisible="false" />
+            <Label x:Name="lblNombre" HorizontalTextAlignment="Center" FontSize="20" />
+            <Label x:Name="lblSector" HorizontalTextAlignment="Center" FontSize="20" />
+            <Label x:Name="lblDireccion" HorizontalTextAlignment="Center" FontSize="20" />
+            <Label x:Name="lblTelefono" HorizontalTextAlignment="Center" FontSize="20" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Estado" FontSize="20" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="End" />
+                <Switch x:Name="swtEstado" IsToggled="True" ThumbColor="LightSeaGreen" OnColor="Gray" HorizontalOptions="Start" IsEnabled="False" Grid.Row="0" Grid.Column="1" />
+
+            </Grid>
+
+            <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AxelMaldonadoS6.CentroInsertar">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Ingresar Centro de Vacunación" FontSize="20" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+            <Image Source="centro.png" HorizontalOptions="Center" WidthRequest="80" HeightRequest="80" />
+
+            <Entry x:Name="txtNombre" Placeholder="Ingrese el nombre" HorizontalTextAlignment="Center" />
+
+            <Picker x:Name="pckSector" Title="Seleccionar sector" HorizontalTextAlignment="Center">
+                <Picker.Items>
+                    <x:String>Norte</x:String>
+                    <x:String>Sur</x:String>
+                    <x:String>Centro</x:String>
+                    <x:String>Valles</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Entry x:Name="txtDireccion" Placeholder="Ingrese la dirección" HorizontalTextAlignment="Center" />
+            <Entry x:Name="txtTelefono" Placeholder="Ingrese el teléfono" Keyboard="Numeric" HorizontalTextAlignment="Center" MaxLength="10"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Estado" FontSize="20" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="End" />
+                <Switch x:Name="swtEstado" IsToggled="True" ThumbColor="LightSeaGreen" OnColor="Gray" HorizontalOptions="Start" Grid.Row="0" Grid.Column="1" />
+
+            </Grid>
+
+            <Button x:Name="btnGuardar" Text="Guardar" Clicked="btnGuardar_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
